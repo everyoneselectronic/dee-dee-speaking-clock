@@ -1,0 +1,21 @@
+{
+  "name": "dee-dee-speaking-clock",
+  "version": "1.0.0",
+  "description": "Limmy Dee Dee speaking clock",
+  "engines": {
+    "node": "5.9.1"
+  },
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/everyoneselectronic/dee-dee-speaking-clock"
+  },
+  "keywords": [
+    "node",
+    "heroku"
+  ],
+  "license": "MIT"
+}

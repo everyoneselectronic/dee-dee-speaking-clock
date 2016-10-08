@@ -1,0 +1,8 @@
+{
+  "name": "dee-dee-speaking-clock",
+  "description": "speaking clock",
+  "repository": "https://github.com/everyoneselectronic/dee-dee-speaking-clock",
+  "logo": "http://node-js-sample.herokuapp.com/node.svg",
+  "keywords": ["node", "static"],
+  "image": "heroku/nodejs"
+}
