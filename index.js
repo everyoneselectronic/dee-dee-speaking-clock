@@ -34,7 +34,7 @@ var server = http.createServer(function (request, response) {
         {
             requestModel = JSON.parse(data);
             response.writeHead(200, { 'Content-Type': 'application/json' });
-            console.log("Call made");
+            console.log(data);
             tellTime();
             response.end(JSON.stringify(responsedata));
         }
