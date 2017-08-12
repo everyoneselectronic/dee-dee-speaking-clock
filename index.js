@@ -26,7 +26,7 @@ var server = http.createServer(function (request, response) {
         if (data == '')
         {
             response.writeHead(301,
-              {Location: 'http://www.limmy.com/deedeespeakingclock/'+newRoom}
+              {Location: 'http://www.limmy.com/deedeespeakingclock/'}
             );
             response.end();
             // response.writeHead(500, { 'Content-Type': 'application/json' });
