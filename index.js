@@ -1,5 +1,6 @@
-var express = require('express');
-var app = express();
+// node app.js
+// ngrok http 5500
+// http://localhost:4040/
 
 var port = process.env.PORT || 8080;
     
@@ -9,10 +10,6 @@ var responsedata = {
     "Instructions": [],
     "Action": {}
 };
-
-// Routing
-var dir = __dirname+'/sounds'; // Path of the index.js but one dir further (public)
-app.use(express.static(dir)); // serve all files in '/var/www/nodeserver/public/'
 
 var http = require('http')
 
