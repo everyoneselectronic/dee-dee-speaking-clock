@@ -25,16 +25,20 @@ var server = http.createServer(function (request, response) {
         var requestModel;
         if (data == '')
         {
-            response.writeHead(500, { 'Content-Type': 'application/json' });
+            response.writeHead(301,
+              {Location: 'http://www.limmy.com/deedeespeakingclock/'+newRoom}
+            );
+            response.end();
+            // response.writeHead(500, { 'Content-Type': 'application/json' });
             // response.end('{"message":"no data posted"}');
-            response.end('Call +44 20 3808 7032 for Limmy\'s Dee Dee Speaking Clock!');
+            // response.end('Call +44 20 3808 7032 for Limmy\'s Dee Dee Speaking Clock!');
             return;
         }
         else
         {
+            console.log(data);
             requestModel = JSON.parse(data);
             response.writeHead(200, { 'Content-Type': 'application/json' });
-            console.log(data);
             tellTime();
             response.end(JSON.stringify(responsedata));
         }
