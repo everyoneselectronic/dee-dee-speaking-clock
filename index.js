@@ -27,7 +27,7 @@ var server = http.createServer(function (request, response) {
         {
             response.writeHead(500, { 'Content-Type': 'application/json' });
             // response.end('{"message":"no data posted"}');
-            response.end('<!DOCTYPE html><html><head><title>Limmy\'s Dee Dee Speaking Clock</title><meta name="author" content="Brian Limond"><meta name="description" content="Listen to the time being spoken to you by Dee Dee from Limmy\'s Show!"><meta name="viewport" content="width=520"><style>html {height: 100%;overflow:hidden;}body {background-image: url("tiledbackground.png");background-color: #111111;margin: 0;padding: 0;height: 100%;font-family: "Arial Black", Gadget, sans-serif;font-size: 11px;} a:link, a:visited, a:hover: a:active { color: white; } #centreMe {width:500px;height:650px;position:absolute;margin-top:-325px;margin-left:-250px;top:50%;left:50%;text-align: center;background: none; } #header {text-align: center;font-size: 50px;color: #ffffff;width: 500px;padding: 20px 0;font-weight: 800;background: none; } #clockimage {width: 500px;height: 284px;/*background-color: #000000;*//*background-image: url("clockperson.jpg");*/} #twitter { width: 500px; height: 100px; text-align:center; padding: 30px 0 0; background: none; } </style></head><body><div id="centreMe"><div id="header">Dee Dee<br>Speaking Clock!</div><div id="clockimage"><img src="http://www.limmy.com/deedeespeakingclock/clockperson.jpg"></div><div id="twitter"><a href="https://twitter.com/DaftLimmy" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @DaftLimmy</a></div></div></body></html>');
+            response.end('Call +44 20 3808 7032 for Limmy\'s Dee Dee Speaking Clock!');
             return;
         }
         else
