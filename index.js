@@ -8,12 +8,14 @@ var baseUrl = "#href[http://test.everyoneselectronic.co.uk/limmy/";
 
 var responsedata = {
     "Instructions": [],
-    "Action": {}
+    "Action": {
+        "name" : "Hangup"
+    }
 };
 
-var http = require('http')
+var https = require('https')
 
-var server = http.createServer(function (request, response) {
+var server = https.createServer(function (request, response) {
     var data = '';
     
     request.on('data', function (chunk) {
@@ -53,20 +55,20 @@ function makeAudioObject(a) {
 
     // console.log(ids);
 
-    var audio = {
-        "name" : "PlayFiles",
-        "ids" :  ids,
-        "locale" : "en-US"
-    }
-    responsedata['Instructions'].push(audio);
+    audioIds.push(ids);
+
+    // var audio = {
+    //     "name" : "PlayFiles",
+    //     "ids" :  ids,
+    //     "locale" : "en-US"
+    // }
+    // responsedata['Instructions'].push(audio);
 }
 
 function tellTime() {
-    responsedata = {
-        "Instructions": [],
-        "Action": {}
-    };
-    
+
+    var audioIds = new Array();
+
     var myDate = new Date();
     var myHour = myDate.getHours();
     var myMinute = myDate.getMinutes();
@@ -129,4 +131,18 @@ function tellTime() {
             // console.log("1h");
         }
     }
+
+    var audio = {
+        "name" : "PlayFiles",
+        "ids" :  audioIds,
+        "locale" : "en-US"
+    }
+
+    // responsedata = {
+    //     "Instructions": [],
+    //     "Action": {}
+    // };
+
+    responsedata['Instructions'].push(audio);
+
 }
