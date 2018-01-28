@@ -7,13 +7,19 @@ var port = process.env.PORT || 8080;
 var baseUrl = "#href[http://test.everyoneselectronic.co.uk/limmy/";
 
 var responsedata = {
-    "Instructions": [],
+    "Instructions": [
+        {
+            "name" : "PlayFiles",
+            "ids" :  [{"#href[http://test.everyoneselectronic.co.uk/limmy/2h.wav", "#href[http://test.everyoneselectronic.co.uk/limmy/2h.wav"}],
+            "locale" : "en-US"
+        }
+    ],
     "Action": {}
 };
 
-var https = require('https')
+var http = require('http')
 
-var server = https.createServer(function (request, response) {
+var server = http.createServer(function (request, response) {
     var data = '';
     
     request.on('data', function (chunk) {
@@ -53,20 +59,20 @@ function makeAudioObject(a) {
 
     // console.log(ids);
 
-    audioIds.push(ids);
-
-    // var audio = {
-    //     "name" : "PlayFiles",
-    //     "ids" :  ids,
-    //     "locale" : "en-US"
-    // }
+    var audio = {
+        "name" : "PlayFiles",
+        "ids" :  ids,
+        "locale" : "en-US"
+    }
     // responsedata['Instructions'].push(audio);
 }
 
 function tellTime() {
-
-    var audioIds = new Array();
-
+    responsedata = {
+        "Instructions": [],
+        "Action": {}
+    };
+    
     var myDate = new Date();
     var myHour = myDate.getHours();
     var myMinute = myDate.getMinutes();
@@ -129,22 +135,4 @@ function tellTime() {
             // console.log("1h");
         }
     }
-
-    // var s = baseUrl + "comingupfor" + ".wav]";
-    // var a = new Array();
-    // a.push(s);
-
-    var audio = {
-        "name" : "PlayFiles",
-        "ids" :  ["#href[http://test.everyoneselectronic.co.uk/limmy/comingupfor.wav","#href[http://test.everyoneselectronic.co.uk/limmy/comingupfor.wav"],
-        "locale" : "en-US"
-    }
-
-    // responsedata = {
-    //     "Instructions": [],
-    //     "Action": {}
-    // };
-
-    responsedata['Instructions'].push(audio);
-
 }
