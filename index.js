@@ -8,14 +8,12 @@ var baseUrl = "#href[http://test.everyoneselectronic.co.uk/limmy/";
 
 var responsedata = {
     "Instructions": [],
-    "Action": {
-        "name" : "Hangup"
-    }
+    "Action": {}
 };
 
-var http = require('http')
+var https = require('https')
 
-var server = http.createServer(function (request, response) {
+var server = https.createServer(function (request, response) {
     var data = '';
     
     request.on('data', function (chunk) {
@@ -132,13 +130,13 @@ function tellTime() {
         }
     }
 
-    var s = baseUrl + "comingupfor" + ".wav]";
-    var a = new Array();
-    a.push(s);
+    // var s = baseUrl + "comingupfor" + ".wav]";
+    // var a = new Array();
+    // a.push(s);
 
     var audio = {
         "name" : "PlayFiles",
-        "ids" :  a,
+        "ids" :  ["#href[http://test.everyoneselectronic.co.uk/limmy/comingupfor.wav","#href[http://test.everyoneselectronic.co.uk/limmy/comingupfor.wav"],
         "locale" : "en-US"
     }
 
