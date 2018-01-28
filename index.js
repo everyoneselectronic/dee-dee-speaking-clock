@@ -13,9 +13,9 @@ var responsedata = {
     }
 };
 
-var https = require('https')
+var http = require('http')
 
-var server = https.createServer(function (request, response) {
+var server = http.createServer(function (request, response) {
     var data = '';
     
     request.on('data', function (chunk) {
@@ -132,9 +132,13 @@ function tellTime() {
         }
     }
 
+    var s = baseUrl + "comingupfor" + ".wav]";
+    var a = new Array();
+    a.push(s);
+
     var audio = {
         "name" : "PlayFiles",
-        "ids" :  audioIds,
+        "ids" :  a,
         "locale" : "en-US"
     }
 
