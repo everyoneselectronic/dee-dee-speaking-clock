@@ -10,7 +10,7 @@ var responsedata = {
     "Instructions": [
         {
             "name" : "PlayFiles",
-            "ids" :  [{"#href[http://test.everyoneselectronic.co.uk/limmy/2h.wav", "#href[http://test.everyoneselectronic.co.uk/limmy/2h.wav"}],
+            "ids" :  ["#href[http://test.everyoneselectronic.co.uk/limmy/2h.wav", "#href[http://test.everyoneselectronic.co.uk/limmy/2h.wav"],
             "locale" : "en-US"
         }
     ],
