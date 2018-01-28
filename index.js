@@ -45,7 +45,7 @@ var server = http.createServer(function (request, response) {
             console.log(data);
             requestModel = JSON.parse(data);
             response.writeHead(200, { 'Content-Type': 'application/json' });
-            tellTime();
+            // tellTime();
             response.end(JSON.stringify(responsedata));
         }
     });
